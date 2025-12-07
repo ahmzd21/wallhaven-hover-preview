@@ -4,11 +4,12 @@
   z-index: 999999;
   pointer-events: none;
   /* Let clicks pass through to the element below if needed, or capturing? Usually preview shouldn't block interaction unless intended */
-  background: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  /* User requested no border */
+  background: transparent;
+  border: none;
+  border-radius: 4px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  padding: 4px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
