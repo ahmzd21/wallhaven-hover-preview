@@ -20,9 +20,7 @@
             "run_at": "document_end"
         }
     ],
-    "icons": [
-	{
+    "icons": {
 	    "48": "icon.png"
-	}
-    ]
+    }
 }
