@@ -1,0 +1,49 @@
+/* Popup container stylings */
+#wh-hover-preview {
+  position: fixed;
+  z-index: 999999;
+  pointer-events: none;
+  /* Let clicks pass through to the element below if needed, or capturing? Usually preview shouldn't block interaction unless intended */
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.95);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(5px);
+  /* Ensure initial position is generally centered if JS fails to update immediately, 
+     but JS sets Top/Left. Wait, if we use translate(-50%, -50%), we need top:50%, left:50% in CSS 
+     OR set them in JS. JS currently sets them.
+     Let's add default top/left to 50% here so it centers by default.
+  */
+  top: 50%;
+  left: 50%;
+}
+
+#wh-hover-preview.visible {
+  opacity: 1;
+  /* Transform handled in JS or we use fixed centering */
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#wh-hover-preview img {
+  max-width: 98vw;
+  max-height: 98vh;
+  border-radius: 4px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Loading state */
+#wh-hover-preview.loading::after {
+  content: 'Loading...';
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  position: absolute;
+}

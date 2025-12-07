@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Wallhaven Hover Preview",
+    "version": "1.0",
+    "description": "Enlarges wallpaper thumbnails on hover.",
+    "host_permissions": [
+        "https://wallhaven.cc/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://wallhaven.cc/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "style.css"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
