@@ -22,5 +22,15 @@
     ],
     "icons": {
 	    "48": "icon.png"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{e5a3b2c1-1234-5678-9abc-def012345678}",
+            "strict_min_version": "140.0",
+            "data_collection_permissions": {
+		"required": ["none"],
+		"optional": []
+	    }
+        }
     }
 }
